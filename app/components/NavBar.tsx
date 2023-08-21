@@ -10,8 +10,8 @@ import {
 
 export default function App() {
   return (
-    <Navbar className="bg-black w-full">
-      <NavbarContent className="sm:flex gap-4 p-4" justify="start">
+    <Navbar className="bg-black w-full justify-between">
+      <NavbarContent className="sm:flex gap-4 p-4">
         <NavbarItem>
           <Link className="hover:text-yellow-500" color="foreground" href="#">
             Projects
@@ -23,7 +23,7 @@ export default function App() {
           </Link>
         </NavbarItem>
       </NavbarContent>
-      <NavbarContent className="p-4" justify="end">
+      <NavbarContent className="p-4">
         <NavbarItem className="hover:text-yellow-500">
           <Button as={Link} color="primary" href="#" variant="flat">
             Contact
