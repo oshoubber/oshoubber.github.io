@@ -1,5 +1,10 @@
 import type { Config } from 'tailwindcss';
 import { nextui } from '@nextui-org/react';
+
+type TailwindPluginUtilities = {
+  addUtilities: any;
+};
+
 const config: Config = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,6 +13,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        fadeInUp: 'fadeInUp 2s'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -24,7 +32,16 @@ const config: Config = {
           }
         }
       }
-    })
+    }),
+    function ({ addUtilities }: TailwindPluginUtilities) {
+      const newUtilities = {
+        '.fill-forwards': {
+          animationFillMode: 'forwards'
+        }
+      };
+
+      addUtilities(newUtilities, ['responsive', 'hover']);
+    }
   ]
 };
 export default config;
