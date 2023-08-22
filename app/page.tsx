@@ -8,10 +8,11 @@ export default function Home() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const hue =
-        ((e.clientX / window.innerWidth) * 180 +
-          (e.clientY / window.innerHeight) * 180) %
-        360;
+      const x = e.clientX / window.innerWidth;
+      const y = e.clientY / window.innerHeight;
+
+      const hue = (x * 360 + y * 180) % 360;
+
       setColor(`hsl(${hue}, 100%, 50%)`);
     };
 
