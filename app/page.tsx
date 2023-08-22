@@ -1,8 +1,7 @@
+'use client';
 import NavBar from './components/NavBar';
-
-const YellowText: React.FC<{ text: string }> = ({ text }) => (
-  <span className="font-semibold text-yellow-500">{text}</span>
-);
+import ColorText from './components/ColorText';
+import { useState, useEffect } from 'react';
 
 export default function Home() {
   return (
@@ -12,12 +11,12 @@ export default function Home() {
         <h1 className="text-5xl animate-fadeInUp">
           Hello, world! 👋🏻🌎
           <br />
-          My name is <YellowText text="Osama Shoubber" />.
+          My name is <ColorText text="Osama Shoubber" color={color} />.
         </h1>
 
         <h2 className="text-3xl pt-20 animate-fadeInUp delay-1s opacity-0 fill-forwards">
-          I&rsquo;m a <YellowText text="Full-Stack" /> and{' '}
-          <YellowText text="Front-End" /> Software Engineer living in the Bay
+          I&rsquo;m a <ColorText text="Full-Stack" /> and{' '}
+          <ColorText text="Front-End" /> Software Engineer living in the Bay
           Area.
         </h2>
         <div className="animate-fadeInUp delay-2s opacity-0 fill-forwards">
@@ -27,9 +26,9 @@ export default function Home() {
             functional, and intuitive user experiences to life.
           </p>
           <p className="text-xl pt-10">
-            Dive deeper to discover my <YellowText text="journey" />, the{' '}
-            <YellowText text="projects" /> I&rsquo;ve poured my heart into, and
-            the <YellowText text="expertise" /> I bring to the table.
+            Dive deeper to discover my <ColorText text="journey" />, the{' '}
+            <ColorText text="projects" /> I&rsquo;ve poured my heart into, and
+            the <ColorText text="expertise" /> I bring to the table.
           </p>
           <p className="text-l pt-10">This website is a WIP 🛠️</p>
         </div>
