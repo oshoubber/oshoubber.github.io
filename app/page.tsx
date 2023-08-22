@@ -7,50 +7,18 @@ export default function Home() {
   const [color, setColor] = useState<string>('rgb(255, 255, 255)');
 
   useEffect(() => {
-    let rafId: number;
-    let nextColor: string;
-
     const handleMouseMove = (e: MouseEvent) => {
-      const x = e.clientX;
-      const y = e.clientY;
-
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-
-      // Compute distance from center (normalized between 0 and 1)
-      const dx = x - centerX;
-      const dy = y - centerY;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-      const maxDistance = Math.sqrt(centerX * centerX + centerY * centerY);
-      const normalizedDistance = distance / maxDistance;
-
-      // Compute angle in radians
-      const angle = Math.atan2(dy, dx);
-      const normalizedAngle = (angle + Math.PI) / (2 * Math.PI); // Normalize between 0 and 1
-
-      const red = Math.floor(255 * normalizedDistance);
-      const green = Math.floor(255 * (1 - normalizedDistance));
-      const blue = Math.floor(255 * normalizedAngle);
-
-      nextColor = `rgb(${red}, ${green}, ${blue})`;
-
-      if (!rafId) {
-        rafId = requestAnimationFrame(updateColor);
-      }
-    };
-
-    const updateColor = () => {
-      setColor(nextColor);
-      rafId = 0; // Reset RAF id
+      const hue =
+        ((e.clientX / window.innerWidth) * 180 +
+          (e.clientY / window.innerHeight) * 180) %
+        360;
+      setColor(`hsl(${hue}, 100%, 50%)`);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      if (rafId) {
-        cancelAnimationFrame(rafId);
-      }
     };
   }, []);
 
