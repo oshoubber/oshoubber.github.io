@@ -1,7 +1,9 @@
 'use client';
+import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import ColorText from './components/ColorText';
-import { useState, useEffect } from 'react';
+import { Button } from '@nextui-org/react';
+import { ArrowDown } from 'react-bootstrap-icons';
 
 export default function Home() {
   const [color, setColor] = useState<string>('rgb(255, 255, 255)');
@@ -24,7 +26,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="dark dark:bg-[#111] flex flex-col min-h-screen items-center pb-12">
+    <main className="dark dark:bg-[#111] flex flex-col min-h-screen pb-12">
       <NavBar />
       <div className="pt-24 px-12">
         <h1 className="text-5xl animate-fadeInUp">
@@ -51,6 +53,15 @@ export default function Home() {
           </p>
           <p className="text-l pt-10">This website is a WIP 🛠️</p>
         </div>
+        <Button
+          className="mt-8 text-xl"
+          color="primary"
+          size="lg"
+          variant="ghost"
+          endContent={<ArrowDown />}
+        >
+          Learn More
+        </Button>
       </div>
     </main>
   );
