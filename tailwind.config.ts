@@ -30,7 +30,8 @@ const config: Config = {
         dark: {
           colors: {
             background: '#111',
-            primary: '#eab308'
+            primary: '#EAB308',
+            secondary: '#006FEE'
           }
         }
       }

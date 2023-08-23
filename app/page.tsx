@@ -55,7 +55,7 @@ export default function Home() {
         </div>
         <Button
           className="mt-8 text-xl"
-          color="primary"
+          color="secondary"
           size="lg"
           variant="ghost"
           endContent={<ArrowDown />}
