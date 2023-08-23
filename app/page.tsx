@@ -42,9 +42,9 @@ export default function Home() {
         </h2>
         <div className="animate-fadeInUp delay-2s opacity-0 fill-forwards">
           <p className="text-xl pt-10">
-            With a passion for crafting intuitive user experiences and scalable
-            applications, I love collaborating with teams to bring beautiful,
-            functional, and intuitive user experiences to life.
+            With a passion for crafting intuitive and scalable web applications,
+            I love collaborating with teams to bring beautiful, functional, and
+            intuitive user experiences to life.
           </p>
           <p className="text-xl pt-10">
             Dive deeper to discover my <ColorText text="journey" />, the{' '}
