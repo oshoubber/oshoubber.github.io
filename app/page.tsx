@@ -3,7 +3,13 @@ import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import ColorText from './components/ColorText';
 import { Button } from '@nextui-org/react';
-import { ArrowDown } from 'react-bootstrap-icons';
+import { ArrowRight } from 'react-bootstrap-icons';
+
+const RotationIcon = () => (
+  <span className="transform group-hover:rotate-90 transition-transform duration-300">
+    <ArrowRight />
+  </span>
+);
 
 export default function Home() {
   const [color, setColor] = useState<string>('rgb(234, 179, 8)');
@@ -58,7 +64,7 @@ export default function Home() {
           color="secondary"
           size="lg"
           variant="ghost"
-          endContent={<ArrowDown />}
+          endContent={<RotationIcon />}
         >
           Learn More
         </Button>
