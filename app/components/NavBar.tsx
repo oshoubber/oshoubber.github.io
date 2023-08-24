@@ -6,6 +6,7 @@ export default function App() {
     <Navbar
       className="bg-black w-full flex justify-between"
       isBlurred
+      shouldHideOnScroll
       maxWidth="full"
     >
       <NavbarContent className="w-full gap-4 p-4">
