@@ -32,7 +32,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="dark dark:bg-[#111] flex flex-col min-h-screen pb-12">
+    <main className="flex flex-col min-h-screen pb-12">
       <NavBar />
       <div className="pt-24 px-12">
         <h1 className="text-5xl animate-fadeInUp">
@@ -57,10 +57,10 @@ export default function Home() {
             <ColorText text="projects" /> I&rsquo;ve poured my heart into, and
             the <ColorText text="expertise" /> I bring to the table.
           </p>
-          <p className="text-l pt-10">This website is a WIP 🛠️</p>
+          <p className="text-base pt-10">This website is a WIP 🛠️</p>
         </div>
         <Button
-          className="mt-8 text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards"
+          className="mt-8 text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards hover:text-white"
           color="secondary"
           size="lg"
           variant="ghost"
