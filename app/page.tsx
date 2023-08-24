@@ -6,7 +6,7 @@ import { Button } from '@nextui-org/react';
 import { ArrowDown } from 'react-bootstrap-icons';
 
 export default function Home() {
-  const [color, setColor] = useState<string>('rgb(255, 255, 255)');
+  const [color, setColor] = useState<string>('rgb(234, 179, 8)');
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
