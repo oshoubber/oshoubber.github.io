@@ -60,7 +60,7 @@ export default function Home() {
           <p className="text-l pt-10">This website is a WIP 🛠️</p>
         </div>
         <Button
-          className="mt-8 text-xl"
+          className="mt-8 text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards"
           color="secondary"
           size="lg"
           variant="ghost"
