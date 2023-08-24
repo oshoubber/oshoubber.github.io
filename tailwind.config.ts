@@ -33,6 +33,12 @@ const config: Config = {
             primary: '#EAB308',
             secondary: '#006FEE'
           }
+        },
+        light: {
+          colors: {
+            primary: '#EAB308',
+            secondary: '#006FEE'
+          }
         }
       }
     }),
