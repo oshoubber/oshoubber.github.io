@@ -32,35 +32,34 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex flex-col min-h-screen pb-12 transition-colors duration-500 dark:bg-background bg-light-background">
+    <main className="min-h-screen flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
       <NavBar />
-      <div className="pt-24 px-12">
-        <h1 className="text-5xl animate-fadeInUp">
+      <section className="flex flex-col flex-1 w-full justify-between py-16 px-12 gap-8">
+        <h1 className="text-responsive-h1 animate-fadeInUp">
           Hello, world! 👋🏻🌎
           <br />
           My name is <ColorText text="Osama Shoubber" color={color} />.
         </h1>
-
-        <h2 className="text-3xl pt-20 animate-fadeInUp delay-1s opacity-0 fill-forwards">
+        <h2 className="text-responsive-h2 animate-fadeInUp delay-1s opacity-0 fill-forwards">
           I&rsquo;m a <ColorText text="Full-Stack" /> and{' '}
           <ColorText text="Front-End" /> Software Engineer living in the Bay
           Area.
         </h2>
-        <div className="animate-fadeInUp delay-2s opacity-0 fill-forwards">
-          <p className="text-xl pt-10">
+        <div className="flex flex-col animate-fadeInUp delay-2s opacity-0 fill-forwards justify-between gap-12">
+          <p className="text-responsive-p">
             With a passion for crafting intuitive and scalable web applications,
             I love collaborating with teams to bring beautiful, functional, and
             intuitive user experiences to life.
           </p>
-          <p className="text-xl pt-10">
+          <p className="text-responsive-p">
             Dive deeper to discover my <ColorText text="journey" />, the{' '}
             <ColorText text="projects" /> I&rsquo;ve poured my heart into, and
             the <ColorText text="expertise" /> I bring to the table.
           </p>
-          <p className="text-base pt-10">This website is a WIP 🛠️</p>
+          <p className="text-base">This website is a WIP 🛠️</p>
         </div>
         <Button
-          className="mt-8 text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards hover:text-white"
+          className="mt-8 w-fit text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards hover:text-white"
           color="secondary"
           size="lg"
           variant="ghost"
@@ -68,7 +67,8 @@ export default function Home() {
         >
           Learn More
         </Button>
-      </div>
+      </section>
+      {/* <section className="h-screen w-full"></section> */}
     </main>
   );
 }
