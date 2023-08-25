@@ -4,6 +4,7 @@ import NavBar from './components/NavBar';
 import ColorText from './components/ColorText';
 import { Button } from '@nextui-org/react';
 import { ArrowRight } from 'react-bootstrap-icons';
+import Footer from './components/Footer';
 
 const RotationIcon = () => (
   <span className="transform group-hover:rotate-90 transition-transform duration-300">
@@ -69,6 +70,7 @@ export default function Home() {
         </Button>
       </section>
       {/* <section className="h-screen w-full"></section> */}
+      <Footer />
     </main>
   );
 }
