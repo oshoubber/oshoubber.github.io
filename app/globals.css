@@ -38,3 +38,8 @@
 .delay-3s {
   animation-delay: 3s;
 }
+
+#tsparticles {
+  pointer-events: none;
+  height: 0;
+}
