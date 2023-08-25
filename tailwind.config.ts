@@ -18,7 +18,7 @@ const config: Config = {
         fadeInUp: 'fadeInUp 2s'
       },
       fontSize: {
-        'responsive-h1': 'clamp(2rem, 5.5vh, 4rem)',
+        'responsive-h1': 'clamp(2rem, 6vh, 4rem)',
         'responsive-h2': 'clamp(1.5rem, 3.5vh, 3.5rem)',
         'responsive-p': 'clamp(1rem, 2.5vh, 2.5rem)'
       },
