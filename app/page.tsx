@@ -38,7 +38,7 @@ export default function Home() {
       <NavBar />
       <ParticleBackground />
       <section className="flex flex-col flex-1 w-full justify-between py-12 px-12 gap-8">
-        <h1 className="text-responsive-h1 animate-fadeInUp">
+        <h1 className="text-responsive-h1 animate-fadeInUp opacity-0 fill-forwards">
           Hello, world! 👋🏻🌎
           <br />
           My name is <ColorText text="Osama Shoubber" color={color} />.
