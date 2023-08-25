@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import ColorText from './components/ColorText';
+import ParticleBackground from './components/ParticleBackground';
 import { Button } from '@nextui-org/react';
 import { ArrowRight } from 'react-bootstrap-icons';
 import Footer from './components/Footer';
@@ -35,7 +36,8 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
       <NavBar />
-      <section className="flex flex-col flex-1 w-full justify-between py-16 px-12 gap-8">
+      <ParticleBackground />
+      <section className="flex flex-col flex-1 w-full justify-between py-12 px-12 gap-8">
         <h1 className="text-responsive-h1 animate-fadeInUp">
           Hello, world! 👋🏻🌎
           <br />
