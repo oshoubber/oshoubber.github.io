@@ -37,7 +37,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
       <NavBar />
       <ParticleBackground />
-      <section className="flex flex-col flex-1 w-full justify-between py-12 px-12 gap-8">
+      <section className="flex flex-col flex-1 w-full items-start justify-between py-12 px-12 gap-8">
         <h1 className="text-responsive-h1 animate-fadeInUp opacity-0 fill-forwards">
           Hello, world! 👋🏻🌎
           <br />
