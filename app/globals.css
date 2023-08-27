@@ -44,20 +44,6 @@
   padding-right: 10%;
 }
 
-.timeline-vertical-line::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 0.125rem; 
-  background-color: #9CA3AF;
-  height: 1.5rem;
-  margin-top: -28px;
-  transform: translateX(-50%);
-  border-radius: 4px;
-}
-
-
 #tsparticles {
   pointer-events: none;
   height: 0;
