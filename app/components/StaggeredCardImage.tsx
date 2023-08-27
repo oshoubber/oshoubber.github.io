@@ -21,7 +21,7 @@ type CardImageType = {
   footer: React.ReactNode;
 };
 
-type StaggeredCardImageType = InfoCardType & CardImageType;
+type StaggeredCardImageType = InfoCardType & CardImageType & { index: number };
 
 const InfoCard: React.FC<InfoCardType> = ({ title, content }) => {
   return (
@@ -54,15 +54,24 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   title,
   content,
   image,
+  index,
   footer
 }) => {
   return (
     <div className="grid grid-cols-2 gap-x-20 m-auto place-content-center staggered-card-padding items-center">
       <div className="flex justify-start">
-        <InfoCard title={title} content={content} />
+        {index % 2 === 0 ? (
+          <InfoCard title={title} content={content} />
+        ) : (
+          <CardImage image={image} footer={footer} />
+        )}
       </div>
       <div className="flex justify-end">
-        <CardImage image={image} footer={footer} />
+        {index % 2 === 0 ? (
+          <CardImage image={image} footer={footer} />
+        ) : (
+          <InfoCard title={title} content={content} />
+        )}
       </div>
     </div>
   );
