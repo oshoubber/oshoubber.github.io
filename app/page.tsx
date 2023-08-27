@@ -75,10 +75,10 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
+    <main className="min-h-screen w-full flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
       <ParticleBackground />
       <NavBar />
-      <section className="h-screen flex flex-col flex-1 w-full items-start justify-between py-12 px-12 gap-8">
+      <section className="h-screen flex flex-col flex-1 items-start justify-between py-12 px-12 gap-8">
         <h1 className="text-responsive-h1 animate-fadeInUp opacity-0 fill-forwards">
           Hello, world! 👋🏻🌎
           <br />
@@ -113,23 +113,21 @@ export default function Home() {
         </Button>
       </section>
       <Divider className="self-center w-11/12" />
-      <section className="h-screen flex flex-col flex-1 w-full items-start">
-        <div className="p-12">
-          <h1 className="relative text-responsive-h1 mb-24">
-            A look into the <ColorText text="past..."></ColorText> 👀
-          </h1>
-          <div className="flex flex-col justify-between gap-24">
-            {timelineContent.map((item, index) => (
-              <StaggeredCardImage
-                key={index}
-                index={index}
-                title={item.title}
-                content={item.content}
-                image={item.image}
-                footer={item.footer}
-              />
-            ))}
-          </div>
+      <section className="h-screen flex flex-col flex-1 items-start p-12">
+        <h1 className="relative text-responsive-h1 mb-24">
+          A look into the <ColorText text="past..."></ColorText> 👀
+        </h1>
+        <div className="flex flex-col justify-between gap-24">
+          {timelineContent.map((item, index) => (
+            <StaggeredCardImage
+              content={item.content}
+              index={index}
+              image={item.image}
+              key={index}
+              footer={item.footer}
+              title={item.title}
+            />
+          ))}
         </div>
       </section>
       <Footer />
