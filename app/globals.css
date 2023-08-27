@@ -39,6 +39,11 @@
   animation-delay: 3s;
 }
 
+.staggered-card-padding {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .timeline-vertical-line::before {
   content: "";
   position: absolute;
@@ -56,9 +61,4 @@
 #tsparticles {
   pointer-events: none;
   height: 0;
-  z-index: 0;
-}
-
-section {
-  z-index: 1;
 }
