@@ -6,7 +6,6 @@ import ParticleBackground from './components/ParticleBackground';
 import { Button, Card, CardBody, Divider } from '@nextui-org/react';
 import { ArrowRight } from 'react-bootstrap-icons';
 import Footer from './components/Footer';
-import Timeline from './components/Timeline';
 
 const RotationIcon = () => (
   <span className="transform group-hover:rotate-90 transition-transform duration-300">
@@ -73,16 +72,11 @@ export default function Home() {
         </Button>
       </section>
       <Divider className="self-center w-11/12" />
-      <section className="flex flex-col h-screen w-full">
+      <section className="flex flex-col relative h-screen w-full">
         <div className="p-12 w-70">
           <h1 className="text-responsive-h1 mb-24">
             A look into the <ColorText text="past..."></ColorText> 👀
           </h1>
-          <Card isBlurred>
-            <CardBody>
-              <Timeline />
-            </CardBody>
-          </Card>
         </div>
       </section>
       <Footer />
