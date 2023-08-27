@@ -2,7 +2,7 @@
 import { Navbar, NavbarContent, NavbarItem, Link } from '@nextui-org/react';
 import ThemeSwitcher from './ThemeSwitcher';
 
-export default function App() {
+const NavBar = () => {
   return (
     <Navbar
       className="bg-black w-full flex justify-between"
@@ -32,4 +32,6 @@ export default function App() {
       </NavbarContent>
     </Navbar>
   );
-}
+};
+
+export default NavBar;
