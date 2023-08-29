@@ -1,4 +1,3 @@
-import ParticleBackground from './components/ParticleBackground';
 import './globals.css';
 import { Providers } from './providers.';
 import type { Metadata } from 'next';
