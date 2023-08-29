@@ -25,9 +25,9 @@ type StaggeredCardImageType = InfoCardType & CardImageType & { index: number };
 
 const InfoCard: React.FC<InfoCardType> = ({ title, content }) => {
   return (
-    <Card className="h-min" isBlurred>
+    <Card isBlurred>
       <CardHeader className="text-3xl">{title}</CardHeader>
-      <CardBody>{content}</CardBody>
+      <CardBody className="text-large">{content}</CardBody>
     </Card>
   );
 };
@@ -35,17 +35,17 @@ const InfoCard: React.FC<InfoCardType> = ({ title, content }) => {
 const CardImage: React.FC<CardImageType> = ({ image, footer }) => {
   return (
     <Card
-      className="aspect-square max-h-[700px] transform hover:scale-105 transition-transform duration-300"
+      className="hover:text-blue-500 transform hover:scale-105 transition-transform duration-300"
       isPressable
+      isFooterBlurred
+      isBlurred
     >
       <Image
         alt=""
         src={image}
-        className="w-full h-full object-cover aspect-square"
+        className="w-full object-cover aspect-square max-h-[700px]"
       />
-      <CardFooter className="flex h-full justify-end items-end absolute bottom-0 z-10 hover:text-blue-500">
-        {footer}
-      </CardFooter>
+      <CardFooter className="flex h-4 justify-end py-4">{footer}</CardFooter>
     </Card>
   );
 };
@@ -57,17 +57,18 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   index,
   footer
 }) => {
+  const shouldAlternate = index % 2 === 0 || window.innerWidth < 1024;
   return (
-    <div className="grid grid-cols-2 gap-x-20 m-auto place-content-center staggered-card-padding items-center">
-      <div className="flex justify-start">
-        {index % 2 === 0 ? (
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-20 m-auto place-content-center staggered-card-padding items-center">
+      <div className="flex justify-start mb-16">
+        {shouldAlternate ? (
           <InfoCard title={title} content={content} />
         ) : (
           <CardImage image={image} footer={footer} />
         )}
       </div>
       <div className="flex justify-end">
-        {index % 2 === 0 ? (
+        {shouldAlternate ? (
           <CardImage image={image} footer={footer} />
         ) : (
           <InfoCard title={title} content={content} />
