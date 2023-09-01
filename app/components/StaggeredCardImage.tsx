@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowRight } from 'react-bootstrap-icons';
 import {
   Card,
   CardBody,
@@ -19,6 +18,7 @@ type InfoCardType = {
 type CardImageType = {
   image: string;
   footer: React.ReactNode;
+  link?: string;
 };
 
 type StaggeredCardImageType = InfoCardType & CardImageType & { index: number };
@@ -32,8 +32,8 @@ const InfoCard: React.FC<InfoCardType> = ({ title, content }) => {
   );
 };
 
-const CardImage: React.FC<CardImageType> = ({ image, footer }) => {
-  return (
+const CardImage: React.FC<CardImageType> = ({ image, footer, link }) => {
+  const CardImageComponent = (
     <Card
       className="hover:text-blue-500 transform hover:scale-105 transition-transform duration-300"
       isPressable
@@ -48,6 +48,14 @@ const CardImage: React.FC<CardImageType> = ({ image, footer }) => {
       <CardFooter className="flex h-4 justify-end py-4">{footer}</CardFooter>
     </Card>
   );
+
+  return link ? (
+    <a href={link} rel="noreferrer noopener" target="_blank">
+      {CardImageComponent}
+    </a>
+  ) : (
+    CardImageComponent
+  );
 };
 
 const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
@@ -55,21 +63,24 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   content,
   image,
   index,
-  footer
+  footer,
+  link
 }) => {
-  const shouldAlternate = index % 2 === 0 || window.innerWidth < 1024;
+  const shouldAlternate =
+    index % 2 === 0 ||
+    (typeof window !== 'undefined' && window.innerWidth < 1024);
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-20 m-auto place-content-center staggered-card-padding items-center">
       <div className="flex justify-start mb-16">
         {shouldAlternate ? (
           <InfoCard title={title} content={content} />
         ) : (
-          <CardImage image={image} footer={footer} />
+          <CardImage image={image} footer={footer} link={link} />
         )}
       </div>
       <div className="flex justify-end">
         {shouldAlternate ? (
-          <CardImage image={image} footer={footer} />
+          <CardImage image={image} footer={footer} link={link} />
         ) : (
           <InfoCard title={title} content={content} />
         )}
@@ -78,4 +89,4 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   );
 };
 
-export default StaggeredCardImage;
+export default React.memo(StaggeredCardImage);

@@ -13,7 +13,7 @@ const ParticleBackground: React.FC = () => {
   }, []);
 
   const particlesLoaded = useCallback(async (container: any) => {
-    await console.log(container);
+    await container;
   }, []);
 
   return (

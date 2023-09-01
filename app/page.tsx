@@ -87,6 +87,7 @@ export default function Home() {
               key={index}
               footer={item.footer}
               title={item.title}
+              link={item.link}
             />
           ))}
         </div>
