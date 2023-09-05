@@ -105,4 +105,4 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   );
 };
 
-export default StaggeredCardImage;
+export default React.memo(StaggeredCardImage);
