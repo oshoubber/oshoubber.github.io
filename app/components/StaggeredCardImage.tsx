@@ -4,7 +4,8 @@ import {
   CardBody,
   CardFooter,
   CardHeader,
-  Image
+  Image,
+  ScrollShadow
 } from '@nextui-org/react';
 
 const dummyText =
@@ -27,7 +28,9 @@ const InfoCard: React.FC<InfoCardType> = ({ title, content }) => {
   return (
     <Card isBlurred>
       <CardHeader className="text-3xl">{title}</CardHeader>
-      <CardBody className="text-large">{content}</CardBody>
+      <CardBody className="text-large">
+        <ScrollShadow className="max-h-[320px]">{content}</ScrollShadow>
+      </CardBody>
     </Card>
   );
 };
