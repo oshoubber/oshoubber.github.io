@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Card,
   CardBody,
@@ -66,19 +66,32 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   footer,
   link
 }) => {
+  const [windowWidth, setWindowWidth] = useState<number | null>(null);
+
+  useEffect(() => {
+    const handleResize = () => setWindowWidth(window.innerWidth);
+
+    if (typeof window !== 'undefined') {
+      handleResize();
+      window.addEventListener('resize', handleResize);
+
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
   const shouldAlternate =
-    index % 2 === 0 ||
-    (typeof window !== 'undefined' && window.innerWidth < 1024);
+    index % 2 === 0 || (windowWidth !== null && windowWidth < 1024);
+
   return (
-    <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-20 m-auto place-content-center staggered-card-padding items-center">
-      <div className="flex justify-start mb-16">
+    <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-20 m-auto place-content-center items-center">
+      <div className="flex justify-start mb-16 lg:pl-[10%] lg:pr-[10%] lg:mx-0 mx-auto">
         {shouldAlternate ? (
           <InfoCard title={title} content={content} />
         ) : (
           <CardImage image={image} footer={footer} link={link} />
         )}
       </div>
-      <div className="flex justify-end">
+      <div className="flex justify-end lg:pl-[10%] lg:pr-[10%] lg:mx-0 mx-auto">
         {shouldAlternate ? (
           <CardImage image={image} footer={footer} link={link} />
         ) : (
@@ -89,4 +102,4 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   );
 };
 
-export default React.memo(StaggeredCardImage);
+export default StaggeredCardImage;
