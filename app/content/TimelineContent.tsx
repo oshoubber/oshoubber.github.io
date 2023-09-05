@@ -17,26 +17,28 @@ const TimelineContent = [
   {
     title: 'Gears - A Professional Car Helper App',
     content:
-      'Lorem ipsum dolor sit amet, ad pro corpora voluptaria. Soleat ubique aperiri at ius, qui at porro noluisse iracundia, dolorum scaevola sit ut. Meliore reprehendunt eu ius, paulo dicam an per. At accusam repudiare inciderint ius, ad sea homero dissentiet eloquentiam, augue eirmod vel ea. Ne sumo eligendi sit. Cu ius putent officiis, vix cu labitur numquam. Per rebum quidam contentiones ei, vix an diceret nominati convenire, mutat etiam eleifend pro in. Te tantas feugait tibique eum. Te dicunt luptatum vel, et facilisi accommodare mea. Ea tale volumus usu, est ei mediocrem hendrerit reprehendunt. Et mea stet constituto. Et tation ocurreret eam. His habeo postea erroribus et, sed salutatus contentiones ei. Rationibus theophrastus eum ut. Choro similique te eam, quodsi detracto mediocrem eu vis, munere quidam inermis et eam. Mea et latine inciderint. Porro labitur vim ei, per altera aliquid no, cu est democritum comprehensam.',
-    image: '/sun.jpg',
+      'Gears represented my initial venture into the Android ecosystem, becoming the first application I successfully developed and monetized on the Google Play Store. The application interfaces seamlessly with Bluetooth and vehicle OBD2 ports, offering diagnostic capabilities for check engine lights. Users receive specific fault codes and are guided through potential solutions. In the course of its development, I actively contributed to an open-source OBD2 Java API and conducted rigorous real-world testing using my own vehicle. The app serves as a cost-effective alternative to professional mechanic diagnostics, requiring only an affordable OBD2 adapter.',
+    image: '/img/Gears.png',
     footer: (
       <div className="flex items-center space-x-1">
         <p>GitHub</p>
         <ArrowRight />
       </div>
-    )
+    ),
+    link: 'https://github.com/oshoubber/Gears-Pro'
   },
   {
-    title: 'Moon Art',
+    title: 'Education - Santa Clara University',
     content:
       'Lorem ipsum dolor sit amet, ad pro corpora voluptaria. Soleat ubique aperiri at ius, qui at porro noluisse iracundia, dolorum scaevola sit ut. Meliore reprehendunt eu ius, paulo dicam an per. At accusam repudiare inciderint ius, ad sea homero dissentiet eloquentiam, augue eirmod vel ea. Ne sumo eligendi sit. Cu ius putent officiis, vix cu labitur numquam. Per rebum quidam contentiones ei, vix an diceret nominati convenire, mutat etiam eleifend pro in. Te tantas feugait tibique eum. Te dicunt luptatum vel, et facilisi accommodare mea. Ea tale volumus usu, est ei mediocrem hendrerit reprehendunt. Et mea stet constituto. Et tation ocurreret eam. His habeo postea erroribus et, sed salutatus contentiones ei. Rationibus theophrastus eum ut. Choro similique te eam, quodsi detracto mediocrem eu vis, munere quidam inermis et eam. Mea et latine inciderint. Porro labitur vim ei, per altera aliquid no, cu est democritum comprehensam.',
-    image: '/moon_art.jpg',
+    image: '/img/SCU.png',
     footer: (
       <div className="flex items-center space-x-1">
-        <p>GitHub</p>
+        <p>SCU Website</p>
         <ArrowRight />
       </div>
-    )
+    ),
+    link: 'https://www.scu.edu/'
   }
 ];
 
