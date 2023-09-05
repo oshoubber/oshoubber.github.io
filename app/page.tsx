@@ -57,7 +57,6 @@ export default function Home() {
             <ColorText text="projects" /> I&rsquo;ve poured my heart into, and
             the <ColorText text="expertise" /> I bring to the table.
           </p>
-          <p className="text-base">This website is a WIP 🛠️</p>
         </div>
         <Button
           className="mt-8 w-fit text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards hover:text-white"
