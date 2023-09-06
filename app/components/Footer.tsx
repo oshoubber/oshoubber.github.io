@@ -8,7 +8,7 @@ type ButtonLinkType = {
 
 const ButtonLink: React.FC<ButtonLinkType> = ({ icon, link }) => (
   <div className="inline-block pt-2 pb-3 px-2 hover:animate-bounce hover:text-yellow-500">
-    <Button isIconOnly className="text-inherit" variant="light">
+    <Button isIconOnly className="hover:text-inherit" variant="light">
       <a href={link} target="_blank" rel="noopener noreferrer">
         {icon}
       </a>
