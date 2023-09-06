@@ -10,18 +10,7 @@ const NavBar = () => {
       shouldHideOnScroll
       maxWidth="full"
     >
-      <NavbarContent className="w-full gap-4 p-4">
-        <NavbarItem>
-          <Link className="hover:text-yellow-500 text-white" href="#">
-            Projects
-          </Link>
-        </NavbarItem>
-        <NavbarItem className="hover:text-yellow-500">
-          <Link className="hover:text-yellow-500 text-white" href="#">
-            About
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
+      <NavbarContent className="w-full gap-4 p-4"></NavbarContent>
       <NavbarContent className="w-full p-4" justify="end">
         <ThemeSwitcher />
         <NavbarItem className="hover:text-yellow-500">
