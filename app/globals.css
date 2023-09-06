@@ -74,8 +74,8 @@
   background: linear-gradient(
       to right,
       #02dc2e 20%,
-      #ff4545 30%,
-      #c12525 70%,
+      #e3e300 30%,
+      #9e9e00 70%,
       #00c65c 80%
   );
   -webkit-background-clip: text;
@@ -87,7 +87,7 @@
       to right,
       #ff4545 20%,
       #fee2e2 30%,
-      #937c7c 70%,
+      #cf8181 70%,
       #c12525 80%
   );
   -webkit-background-clip: text;
