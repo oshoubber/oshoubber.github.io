@@ -27,7 +27,7 @@ const TimelineContent = [
         <ArrowRight />
       </div>
     ),
-    link: 'https://github.com/oshoubber/Gears-Pro'
+    link: 'https://github.com/oshoubber/Gears'
   },
   {
     title: 'Education - Santa Clara University',
