@@ -23,7 +23,7 @@ const TimelineContent = [
     image: '/img/gears.png',
     footer: (
       <div className="flex items-center space-x-1">
-        <p>GitHub</p>
+        <p>GitHub & Screenshots</p>
         <ArrowRight />
       </div>
     ),
