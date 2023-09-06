@@ -1,49 +1,37 @@
 import { Linkedin, Github, EnvelopeAt } from 'react-bootstrap-icons';
 import { Button } from '@nextui-org/react';
 
+type ButtonLinkType = {
+  icon: React.ReactNode;
+  link: string;
+};
+
+const ButtonLink: React.FC<ButtonLinkType> = ({ icon, link }) => (
+  <div className="inline-block pt-2 pb-3 px-2 hover:animate-bounce hover:text-yellow-500">
+    <Button isIconOnly className="text-inherit" variant="light">
+      <a href={link} target="_blank" rel="noopener noreferrer">
+        {icon}
+      </a>
+    </Button>
+  </div>
+);
+
 const Footer = () => {
   return (
     <footer className="text-white p-4">
-      <div className="container mx-auto flex justify-center space-x-8">
-        <Button
-          isIconOnly
-          className="hover:animate-bounce hover:text-yellow-500"
-          variant="light"
-        >
-          <a
-            href="https://www.linkedin.com/in/oshoubber/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Linkedin size={20} />
-          </a>
-        </Button>
-        <Button
-          isIconOnly
-          className="hover:animate-bounce hover:text-yellow-500"
-          variant="light"
-        >
-          <a
-            href="https://github.com/oshoubber"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github size={20} />
-          </a>
-        </Button>
-        <Button
-          isIconOnly
-          className="hover:animate-bounce hover:text-yellow-500"
-          variant="light"
-        >
-          <a
-            href="mailto:oshoubber@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <EnvelopeAt size={20} />
-          </a>
-        </Button>
+      <div className="container mx-auto flex justify-center space-x-6">
+        <ButtonLink
+          icon={<Linkedin size={20} />}
+          link="https://www.linkedin.com/in/oshoubber/"
+        />
+        <ButtonLink
+          icon={<Github size={20} />}
+          link="https://www.github.com/oshoubber/"
+        />
+        <ButtonLink
+          icon={<EnvelopeAt size={20} />}
+          link="mailto:oshoubber@gmail.com"
+        />
       </div>
     </footer>
   );

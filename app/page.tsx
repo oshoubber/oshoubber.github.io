@@ -2,19 +2,22 @@
 import { useState, useEffect } from 'react';
 import NavBar from './components/NavBar';
 import ColorText from './components/ColorText';
-import ParticleBackground from './components/ParticleBackground';
-import { Button, Card, CardBody, Divider } from '@nextui-org/react';
-import { ArrowRight } from 'react-bootstrap-icons';
 import Footer from './components/Footer';
+import ParticleBackground from './components/ParticleBackground';
+import StaggeredCardImage from './components/StaggeredCardImage';
 
-const RotationIcon = () => (
-  <span className="transform group-hover:rotate-90 transition-transform duration-300">
-    <ArrowRight />
-  </span>
-);
+import TimelineContent from './content/TimelineContent';
+
+import { Button, Divider } from '@nextui-org/react';
+import { ArrowRight } from 'react-bootstrap-icons';
 
 export default function Home() {
   const [color, setColor] = useState<string>('rgb(234, 179, 8)');
+
+  const scrollToElement = () => {
+    const element = document.getElementById('past-experiences-section');
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -34,10 +37,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
-      <NavBar />
+    <main className="min-h-screen w-full flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
       <ParticleBackground />
-      <section className="flex flex-col flex-1 w-full items-start justify-between py-12 px-12 gap-8">
+      <NavBar />
+      <section
+        id="intro-section"
+        className="h-screen flex flex-col flex-1 items-start justify-between py-12 px-12 gap-8"
+      >
         <h1 className="text-responsive-h1 animate-fadeInUp opacity-0 fill-forwards">
           Hello, world! 👋🏻🌎
           <br />
@@ -59,24 +65,43 @@ export default function Home() {
             <ColorText text="projects" /> I&rsquo;ve poured my heart into, and
             the <ColorText text="expertise" /> I bring to the table.
           </p>
-          <p className="text-base">This website is a WIP 🛠️</p>
         </div>
         <Button
           className="mt-8 w-fit text-xl animate-fadeInUp delay-3s opacity-0 fill-forwards hover:text-white"
           color="secondary"
           size="lg"
           variant="ghost"
-          endContent={<RotationIcon />}
+          endContent={
+            <span className="transform group-hover:rotate-90 transition-transform duration-300">
+              <ArrowRight />
+            </span>
+          }
+          onClick={scrollToElement}
         >
           Learn More
         </Button>
       </section>
       <Divider className="self-center w-11/12" />
-      <section className="flex flex-col relative h-screen w-full">
-        <div className="p-12 w-70">
-          <h1 className="text-responsive-h1 mb-24">
-            A look into the <ColorText text="past..."></ColorText> 👀
-          </h1>
+      <section
+        id="past-experiences-section"
+        className="h-screen flex flex-col flex-1 items-start p-12"
+      >
+        <h1 className="relative text-responsive-h1 mb-16">
+          A look into the <ColorText text="past..."></ColorText> 👀
+        </h1>
+        <div className="flex flex-col justify-between gap-24">
+          {TimelineContent.map((item, index) => (
+            <StaggeredCardImage
+              content={item.content}
+              colorScheme={item.colorScheme}
+              index={index}
+              image={item.image}
+              key={index}
+              footer={item.footer}
+              title={item.title}
+              link={item.link}
+            />
+          ))}
         </div>
       </section>
       <Footer />
@@ -84,10 +109,7 @@ export default function Home() {
   );
 }
 
-{
-  /* <p className="text-l pt-10">
+/* <p className="text-l pt-10">
 I&rsquo;m a second generation Iraqi-American 🇮🇶 🇺🇸. I'm fluent in
-English and Arabic, and know some Spanish as well! I graduated from
-Santa Clara University with a B.S. in Computer Science & Engineering.
+English and Arabic, and know some Spanish as well!
 </p> */
-}
