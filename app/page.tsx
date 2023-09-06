@@ -14,6 +14,11 @@ import { ArrowRight } from 'react-bootstrap-icons';
 export default function Home() {
   const [color, setColor] = useState<string>('rgb(234, 179, 8)');
 
+  const scrollToElement = () => {
+    const element = document.getElementById('past-experiences-section');
+    element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = e.clientX / window.innerWidth;
@@ -35,7 +40,10 @@ export default function Home() {
     <main className="min-h-screen w-full flex flex-col transition-colors duration-500 dark:bg-background bg-light-background">
       <ParticleBackground />
       <NavBar />
-      <section className="h-screen flex flex-col flex-1 items-start justify-between py-12 px-12 gap-8">
+      <section
+        id="intro-section"
+        className="h-screen flex flex-col flex-1 items-start justify-between py-12 px-12 gap-8"
+      >
         <h1 className="text-responsive-h1 animate-fadeInUp opacity-0 fill-forwards">
           Hello, world! 👋🏻🌎
           <br />
@@ -68,12 +76,16 @@ export default function Home() {
               <ArrowRight />
             </span>
           }
+          onClick={scrollToElement}
         >
           Learn More
         </Button>
       </section>
       <Divider className="self-center w-11/12" />
-      <section className="h-screen flex flex-col flex-1 items-start p-12">
+      <section
+        id="past-experiences-section"
+        className="h-screen flex flex-col flex-1 items-start p-12"
+      >
         <h1 className="relative text-responsive-h1 mb-24">
           A look into the <ColorText text="past..."></ColorText> 👀
         </h1>
@@ -99,6 +111,5 @@ export default function Home() {
 
 /* <p className="text-l pt-10">
 I&rsquo;m a second generation Iraqi-American 🇮🇶 🇺🇸. I'm fluent in
-English and Arabic, and know some Spanish as well! I graduated from
-Santa Clara University with a B.S. in Computer Science & Engineering.
+English and Arabic, and know some Spanish as well!
 </p> */
