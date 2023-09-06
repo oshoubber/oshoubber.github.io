@@ -86,7 +86,7 @@ export default function Home() {
         id="past-experiences-section"
         className="h-screen flex flex-col flex-1 items-start p-12"
       >
-        <h1 className="relative text-responsive-h1 mb-24">
+        <h1 className="relative text-responsive-h1 mb-16">
           A look into the <ColorText text="past..."></ColorText> 👀
         </h1>
         <div className="flex flex-col justify-between gap-24">
