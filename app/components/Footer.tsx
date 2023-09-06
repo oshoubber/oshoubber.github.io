@@ -1,4 +1,4 @@
-import { Linkedin, Github, EnvelopeAt, Icon } from 'react-bootstrap-icons';
+import { Linkedin, Github, EnvelopeAt } from 'react-bootstrap-icons';
 import { Button } from '@nextui-org/react';
 
 type ButtonLinkType = {
@@ -7,7 +7,7 @@ type ButtonLinkType = {
 };
 
 const ButtonLink: React.FC<ButtonLinkType> = ({ icon, link }) => (
-  <div className="inline-block pt-2 pb-3 hover:animate-bounce hover:text-yellow-500">
+  <div className="inline-block pt-2 pb-3 px-2 hover:animate-bounce hover:text-yellow-500">
     <Button isIconOnly className="text-inherit" variant="light">
       <a href={link} target="_blank" rel="noopener noreferrer">
         {icon}
@@ -19,7 +19,7 @@ const ButtonLink: React.FC<ButtonLinkType> = ({ icon, link }) => (
 const Footer = () => {
   return (
     <footer className="text-white p-4">
-      <div className="container mx-auto flex justify-center space-x-8">
+      <div className="container mx-auto flex justify-center space-x-6">
         <ButtonLink
           icon={<Linkedin size={20} />}
           link="https://www.linkedin.com/in/oshoubber/"
