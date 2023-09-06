@@ -8,12 +8,10 @@ import {
   ScrollShadow
 } from '@nextui-org/react';
 
-const dummyText =
-  'Lorem ipsum dolor sit amet, ad pro corpora voluptaria. Soleat ubique aperiri at ius, qui at porro noluisse iracundia, dolorum scaevola sit ut. Meliore reprehendunt eu ius, paulo dicam an per. At accusam repudiare inciderint ius, ad sea homero dissentiet eloquentiam, augue eirmod vel ea. Ne sumo eligendi sit. Cu ius putent officiis, vix cu labitur numquam. Per rebum quidam contentiones ei, vix an diceret nominati convenire, mutat etiam eleifend pro in. Te tantas feugait tibique eum. Te dicunt luptatum vel, et facilisi accommodare mea. Ea tale volumus usu, est ei mediocrem hendrerit reprehendunt. Et mea stet constituto. Et tation ocurreret eam. His habeo postea erroribus et, sed salutatus contentiones ei. Rationibus theophrastus eum ut. Choro similique te eam, quodsi detracto mediocrem eu vis, munere quidam inermis et eam. Mea et latine inciderint. Porro labitur vim ei, per altera aliquid no, cu est democritum comprehensam.';
-
 type InfoCardType = {
   title: string;
   content: string;
+  colorScheme?: string;
 };
 
 type CardImageType = {
@@ -24,11 +22,17 @@ type CardImageType = {
 
 type StaggeredCardImageType = InfoCardType & CardImageType & { index: number };
 
-const InfoCard: React.FC<InfoCardType> = ({ title, content }) => {
+const InfoCard: React.FC<InfoCardType> = ({ title, content, colorScheme }) => {
   return (
     <Card isBlurred>
-      <CardHeader className="text-3xl">{title}</CardHeader>
-      <CardBody className="text-large">
+      <CardHeader
+        className={`text-3xl font-semibold text-gradient-shine ${
+          colorScheme ? `shine-${colorScheme}` : ''
+        } ? transform hover:scale-[1.02] transition-transform duration-300`}
+      >
+        {title}
+      </CardHeader>
+      <CardBody className="text-large whitespace-pre-wrap">
         <ScrollShadow className="max-h-[320px]">{content}</ScrollShadow>
       </CardBody>
     </Card>
@@ -64,6 +68,7 @@ const CardImage: React.FC<CardImageType> = ({ image, footer, link }) => {
 const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
   title,
   content,
+  colorScheme,
   image,
   index,
   footer,
@@ -89,7 +94,7 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
     <div className="grid lg:grid-cols-2 grid-cols-1 gap-x-20 m-auto place-content-center items-center">
       <div className="flex justify-start mb-16 lg:pl-[10%] lg:pr-[10%] lg:mx-0 mx-auto">
         {shouldAlternate ? (
-          <InfoCard title={title} content={content} />
+          <InfoCard title={title} content={content} colorScheme={colorScheme} />
         ) : (
           <CardImage image={image} footer={footer} link={link} />
         )}
@@ -98,7 +103,7 @@ const StaggeredCardImage: React.FC<StaggeredCardImageType> = ({
         {shouldAlternate ? (
           <CardImage image={image} footer={footer} link={link} />
         ) : (
-          <InfoCard title={title} content={content} />
+          <InfoCard title={title} content={content} colorScheme={colorScheme} />
         )}
       </div>
     </div>

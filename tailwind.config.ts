@@ -21,11 +21,6 @@ const config: Config = {
         'responsive-h1': 'clamp(2rem, 6vh, 4rem)',
         'responsive-h2': 'clamp(1.5rem, 3.5vh, 3.5rem)',
         'responsive-p': 'clamp(1rem, 2.5vh, 2.5rem)'
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       }
     }
   },

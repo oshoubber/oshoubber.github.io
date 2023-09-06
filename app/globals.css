@@ -44,6 +44,56 @@
   padding-right: 10%;
 }
 
+.text-gradient-shine {
+  animation: textShine 3s ease-in-out infinite alternate;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes textShine {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+.shine-blue {
+  background: linear-gradient(
+      to right,
+      #7953cd 20%,
+      #00affa 30%,
+      #0190cd 70%,
+      #764ada 80%
+  );
+  -webkit-background-clip: text;
+  background-size: 500% auto;
+}
+
+.shine-green {
+  background: linear-gradient(
+      to right,
+      #02dc2e 20%,
+      #ff4545 30%,
+      #c12525 70%,
+      #00c65c 80%
+  );
+  -webkit-background-clip: text;
+  background-size: 500% auto;
+}
+
+.shine-red {
+  background: linear-gradient(
+      to right,
+      #ff4545 20%,
+      #fee2e2 30%,
+      #937c7c 70%,
+      #c12525 80%
+  );
+  -webkit-background-clip: text;
+  background-size: 500% auto;
+}
+
 #tsparticles {
   pointer-events: none;
   height: 0;

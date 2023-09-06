@@ -81,6 +81,7 @@ export default function Home() {
           {TimelineContent.map((item, index) => (
             <StaggeredCardImage
               content={item.content}
+              colorScheme={item.colorScheme}
               index={index}
               image={item.image}
               key={index}
