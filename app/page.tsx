@@ -42,7 +42,7 @@ export default function Home() {
       <NavBar />
       <section
         id="intro-section"
-        className="h-screen flex flex-col flex-1 items-start justify-between py-12 px-12 gap-8"
+        className="h-screen flex flex-col flex-1 items-start justify-between my-12 px-12 gap-y-20"
       >
         <h1 className="text-responsive-h1 animate-fadeInUp opacity-0 fill-forwards">
           Hello, world! 👋🏻🌎
